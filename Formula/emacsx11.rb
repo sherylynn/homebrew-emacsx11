@@ -57,6 +57,8 @@ class Emacsx11 < Formula
       --with-x
       --with-cairo
       --with-gif=no
+      --with-tiff=no
+      --with-jpeg=no
     ]
 
     if build.head?
