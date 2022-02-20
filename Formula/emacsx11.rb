@@ -53,9 +53,7 @@ class Emacsx11 < Formula
       --without-selinux
       --with-x
       --with-cairo
-      --with-git=no
-      --with-tiff=no
-      --with-jpeg=no
+      --with-gif=no
     ]
 
     if build.head?
