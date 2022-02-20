@@ -14,7 +14,10 @@ class Emacsx11 < Formula
   depends_on "pkg-config" => :build
   depends_on "gnutls"
   depends_on "jansson"
+  depends_on "libxaw"
   depends_on "libx11"
+  depends_on "libtiff"
+  depends_on "libjpeg"
   depends_on "libxcb"
   depends_on "libxt"
   depends_on "libxext"
@@ -35,7 +38,7 @@ class Emacsx11 < Formula
     # Mojave uses the Catalina SDK which causes issues like
     # https://github.com/Homebrew/homebrew-core/issues/46393
     # https://github.com/Homebrew/homebrew-core/pull/70421
-    ENV["ac_cv_func_aligned_alloc"] = "no" if MacOS.version == :mojave
+    ENV.append "LDFLAGS", "-lfreetype -lfontconfig"
     args = %W[
       --disable-silent-rules
       --enable-locallisppath=#{HOMEBREW_PREFIX}/share/emacs/site-lisp
