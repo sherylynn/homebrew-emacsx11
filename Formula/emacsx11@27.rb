@@ -61,10 +61,8 @@ class Emacsx11AT27 < Formula
       --with-jpeg=no
     ]
 
-    if build.head?
-      ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
-      system "./autogen.sh"
-    end
+    ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
+    system "./autogen.sh"
 
     File.write "lisp/site-load.el", <<~EOS
       (setq exec-path (delete nil
