@@ -1,4 +1,4 @@
-class Emacsx11 < Formula
+class Emacsx11AT28 < Formula
   desc "GNU Emacs text editor X11"
   homepage "https://www.gnu.org/software/emacs/"
   version "28.0.91"
