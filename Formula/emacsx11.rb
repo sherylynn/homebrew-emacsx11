@@ -9,6 +9,13 @@ class Emacsx11 < Formula
   head do
     url "https://github.com/emacs-mirror/emacs.git", :branch => "emacs-28"
   end
+
+  bottle do
+    url "https://github.com/sherylynn/homebrew-emacsx11/releases/download/untagged-72516658d5de06ba15a5/emacsx11--28.0.91.x86_64_linux.bottle.1.tar.gz"
+    rebuild 1
+    sha256 x86_64_linux: "2297a32dc25470476c2ea79445a970f13e8dcb10339cd49aa61aa6576356579f"
+  end
+
   
   depends_on "autoconf" => :build
   depends_on "gnu-sed" => :build
