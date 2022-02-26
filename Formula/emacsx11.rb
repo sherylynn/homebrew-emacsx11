@@ -11,7 +11,7 @@ class Emacsx11 < Formula
   end
 
   bottle do
-    root_url "https://github.com/sherylynn/homebrew-emacsx11/releases/download/untagged-72516658d5de06ba15a5"
+    root_url "https://github.com/sherylynn/homebrew-emacsx11/releases/download/v28.0.91"
     rebuild 1
     sha256 cellar: :any, x86_64_linux: "2297a32dc25470476c2ea79445a970f13e8dcb10339cd49aa61aa6576356579f"
   end
