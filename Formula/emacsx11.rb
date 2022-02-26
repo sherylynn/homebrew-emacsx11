@@ -29,6 +29,11 @@ class Emacsx11 < Formula
   depends_on "freetype" => :recommended
   depends_on "fontconfig" => :recommended
 
+  depends_on "libgccjit11"
+  depends_on "gcc" => :build
+  depends_on "gmp" => :build
+  depends_on "zlib" => :build
+
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
 
@@ -41,6 +46,20 @@ class Emacsx11 < Formula
     # Mojave uses the Catalina SDK which causes issues like
     # https://github.com/Homebrew/homebrew-core/issues/46393
     # https://github.com/Homebrew/homebrew-core/pull/70421
+    gcc_ver = Formula["gcc"].any_installed_version
+    gcc_ver_major = gcc_ver.major
+    gcc_lib="#{HOMEBREW_PREFIX}/lib/gcc/#{gcc_ver_major}"
+
+    ENV.append "CFLAGS", "-I#{Formula["gcc"].include}"
+    ENV.append "CFLAGS", "-I#{Formula["libgccjit11"].include}"
+    ENV.append "CFLAGS", "-I#{Formula["gmp"].include}"
+    ENV.append "CFLAGS", "-I#{Formula["libjpeg"].include}"
+
+    ENV.append "LDFLAGS", "-L#{gcc_lib}"
+    ENV.append "LDFLAGS", "-I#{Formula["gcc"].include}"
+    ENV.append "LDFLAGS", "-I#{Formula["libgccjit11"].include}"
+    ENV.append "LDFLAGS", "-I#{Formula["gmp"].include}"
+    ENV.append "LDFLAGS", "-I#{Formula["libjpeg"].include}"
     ENV.append "LDFLAGS", "-lfreetype -lfontconfig"
     args = %W[
       --disable-silent-rules
@@ -58,7 +77,6 @@ class Emacsx11 < Formula
       --with-cairo
       --with-gif=no
       --with-tiff=no
-      --with-jpeg=no
       --with-native-compilation
     ]
 
