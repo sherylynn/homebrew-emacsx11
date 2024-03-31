@@ -1,8 +1,8 @@
 #version="28.0.91"
-version="27.2"
+version="29.3"
 url="https://github.com/emacs-mirror/emacs/archive/refs/tags/emacs-"${version}".tar.gz"
 fileName=emacs
-FormulaName=emacsx11@27
+FormulaName=emacsx11@29
 curl -o ${fileName}.tar.gz -L ${url}
 sha256=$(openssl dgst -sha256 ${fileName}.tar.gz)
 echo ${sha256}
