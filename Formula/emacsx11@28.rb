@@ -1,13 +1,13 @@
-class Emacsx11AT29 < Formula 
+class Emacsx11AT28 < Formula
   desc "GNU Emacs text editor X11"
   homepage "https://www.gnu.org/software/emacs/"
-  version "29.3"
+  version "28.0.91"
   url "https://github.com/emacs-mirror/emacs/archive/refs/tags/emacs-"+version+".tar.gz"
-  sha256 "64c1334d5a518748a009b7672792d8a0ad99e485f69020b04becfec2658d65af"
+  sha256 "98b1466a4681215d1d945e39fe3c3907ae262ced3c1d27786d502713b4ff4b60"
   license "GPL-3.0-or-later"
 
   head do
-    url "https://github.com/emacs-mirror/emacs.git", :branch => "emacs-29"
+    url "https://github.com/emacs-mirror/emacs.git", :branch => "emacs-28"
   end
 
   
