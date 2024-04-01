@@ -1,2 +1,3 @@
 # homebrew-emacsx11
-emacs x11 for homebrew
+
+emacs x11 for homebrew(linux)
