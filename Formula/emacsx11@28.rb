@@ -10,6 +10,12 @@ class Emacsx11AT28 < Formula
     url "https://github.com/emacs-mirror/emacs.git", :branch => "emacs-28"
   end
 
+  bottle do
+    root_url "https://github.com/sherylynn/homebrew-emacsx11/releases/download/v28.0.91"
+    rebuild 1
+    sha256 cellar: :any, x86_64_linux: "2297a32dc25470476c2ea79445a970f13e8dcb10339cd49aa61aa6576356579f"
+  end
+
   
   depends_on "autoconf" => :build
   depends_on "gnu-sed" => :build
@@ -30,7 +36,7 @@ class Emacsx11AT28 < Formula
   depends_on "freetype" => :recommended
   depends_on "fontconfig" => :recommended
 
-  depends_on "libgccjit"
+  depends_on "libgccjit11"
   depends_on "gcc" => :build
   depends_on "gmp" => :build
   depends_on "zlib" => :build
@@ -52,13 +58,13 @@ class Emacsx11AT28 < Formula
     gcc_lib="#{HOMEBREW_PREFIX}/lib/gcc/#{gcc_ver_major}"
 
     ENV.append "CFLAGS", "-I#{Formula["gcc"].include}"
-    ENV.append "CFLAGS", "-I#{Formula["libgccjit"].include}"
+    ENV.append "CFLAGS", "-I#{Formula["libgccjit11"].include}"
     ENV.append "CFLAGS", "-I#{Formula["gmp"].include}"
     ENV.append "CFLAGS", "-I#{Formula["libjpeg"].include}"
 
     ENV.append "LDFLAGS", "-L#{gcc_lib}"
     ENV.append "LDFLAGS", "-I#{Formula["gcc"].include}"
-    ENV.append "LDFLAGS", "-I#{Formula["libgccjit"].include}"
+    ENV.append "LDFLAGS", "-I#{Formula["libgccjit11"].include}"
     ENV.append "LDFLAGS", "-I#{Formula["gmp"].include}"
     ENV.append "LDFLAGS", "-I#{Formula["libjpeg"].include}"
     ENV.append "LDFLAGS", "-lfreetype -lfontconfig"
