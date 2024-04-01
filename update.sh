@@ -16,3 +16,7 @@ vi ./Formula/${FormulaName}.rb -c '/Emacsx11AT' -c 'normal ddOclass Emacsx11AT' 
 vi ./Formula/${FormulaName}.rb -c '/branch' -c 'normal ddOurl "https://github.com/emacs-mirror/emacs.git", :branch => "emacs-"' -c "normal i${version_num}" -c 'wq!'
 vi ./Formula/${FormulaName}.rb -c '/version' -c 'normal ddOversion ""' -c "normal i${version}" -c 'wq!'
 vi ./Formula/${FormulaName}.rb -c '/sha256' -c 'normal ddOsha256 ""' -c "normal i${sha256_string}" -c 'wq!'
+#brew tap sherylynn/emacsx11
+#brew uninstall emacsx11
+#brew install --build-bottle emacsx11
+#brew bottle emacsx11
