@@ -9,7 +9,12 @@ class Emacsx11 < Formula
   head do
     url "https://github.com/emacs-mirror/emacs.git", :branch => "emacs-29"
   end
-
+  
+  bottle do
+    root_url "https://github.com/sherylynn/homebrew-emacsx11/releases/download/pr-pull"
+    rebuild 1
+    sha256 x86_64_linux: "f631e7deae6321119adc14d6e2f72fd9f7d3fa8bc10b988905a132167d9c7bc9"
+  end
   
   depends_on "autoconf" => :build
   depends_on "gnu-sed" => :build
