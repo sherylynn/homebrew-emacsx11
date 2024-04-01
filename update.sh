@@ -11,7 +11,7 @@ echo ${sha256}
 sha256_string=${sha256##*= }
 echo ${sha256_string}
 rm ${fileName}.tar.gz
-cp ./Formula/emacsx11@28.rb ./Formula/${FormulaName}.rb
+cp ./Formula/emacsx11@29.rb ./Formula/${FormulaName}.rb
 vi ./Formula/${FormulaName}.rb -c '/Emacsx11AT' -c 'normal ddOclass Emacsx11AT' -c "normal a${version_num} < Formula " -c 'wq!'
 vi ./Formula/${FormulaName}.rb -c '/branch' -c 'normal ddOurl "https://github.com/emacs-mirror/emacs.git", :branch => "emacs-"' -c "normal i${version_num}" -c 'wq!'
 vi ./Formula/${FormulaName}.rb -c '/version' -c 'normal ddOversion ""' -c "normal i${version}" -c 'wq!'
