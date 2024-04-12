@@ -1,20 +1,15 @@
-class Emacsx11AT29 < Formula
+class Emacsx11AT30.0 < Formula 
   desc "GNU Emacs text editor X11"
   homepage "https://www.gnu.org/software/emacs/"
-  version "29.3"
+  version "30.0.50"
   url "https://github.com/emacs-mirror/emacs/archive/refs/tags/emacs-"+version+".tar.gz"
-  sha256 "64c1334d5a518748a009b7672792d8a0ad99e485f69020b04becfec2658d65af"
+  sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
   license "GPL-3.0-or-later"
 
   head do
-    url "https://github.com/emacs-mirror/emacs.git", :branch => "emacs-29"
+    url "https://github.com/emacs-mirror/emacs.git", :branch => "emacs-30"
   end
-  
-  bottle do
-    root_url "https://github.com/sherylynn/homebrew-emacsx11/releases/download/pr-pull"
-    rebuild 1
-    sha256 x86_64_linux: "f631e7deae6321119adc14d6e2f72fd9f7d3fa8bc10b988905a132167d9c7bc9"
-  end
+
   
   depends_on "autoconf" => :build
   depends_on "gnu-sed" => :build
@@ -34,6 +29,11 @@ class Emacsx11AT29 < Formula
   depends_on "cairo"
   depends_on "freetype" => :recommended
   depends_on "fontconfig" => :recommended
+
+  # for emacs package tree-sitter
+  depends_on "tree-sitter"
+  # for emacs package vterm
+  depends_on "libtool"
 
   depends_on "libgccjit"
   depends_on "gcc" => :build
