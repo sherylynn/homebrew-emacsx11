@@ -30,6 +30,11 @@ class Emacsx11AT29 < Formula
   depends_on "freetype" => :recommended
   depends_on "fontconfig" => :recommended
 
+  # for emacs package tree-sitter
+  depends_on "tree-sitter"
+  # for emacs package vterm
+  depends_on "libtool"
+
   depends_on "libgccjit"
   depends_on "gcc" => :build
   depends_on "gmp" => :build
