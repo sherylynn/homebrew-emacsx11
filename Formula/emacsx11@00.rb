@@ -76,6 +76,7 @@ class Emacsx11AT29 < Formula
       --with-xml2
       --without-dbus
       --with-modules
+      --with-tree-sitter
       --without-ns
       --without-imagemagick
       --without-selinux

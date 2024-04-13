@@ -1,5 +1,6 @@
 #version="28.0.91"
-version="30.0.50"
+#version="30.0.50"
+version="29.3"
 version_num=${version%.*}
 url="https://github.com/emacs-mirror/emacs/archive/refs/tags/emacs-"${version}".tar.gz"
 fileName=emacs
