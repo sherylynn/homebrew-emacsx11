@@ -10,11 +10,11 @@ class Emacsx11 < Formula
     url "https://github.com/emacs-mirror/emacs.git", :branch => "emacs-29"
   end
 
-#  bottle do
-#    root_url "https://github.com/sherylynn/homebrew-emacsx11/releases/download/v29.3"
-#    rebuild 1
-#    sha256 cellar: :any, x86_64_linux: "12dadb43b088c49db304d1cee7d06d2ad4b69d124caa462495d9e6e9d943e068"
-#  end
+  bottle do
+    root_url "https://github.com/sherylynn/homebrew-emacsx11/releases/download/v29.3"
+    rebuild 1
+    sha256 cellar: :any, x86_64_linux: "687ca0b82463b2c222c05e14adf075d202e091dfe0f7487eaadc38824bf4f618"
+  end
   
   depends_on "autoconf" => :build
   depends_on "gnu-sed" => :build
