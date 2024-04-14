@@ -1,4 +1,4 @@
-class Emacsx11 < Formula
+class Emacsx11 < Formula 
   desc "GNU Emacs text editor X11"
   homepage "https://www.gnu.org/software/emacs/"
   version "29.3"
@@ -9,12 +9,7 @@ class Emacsx11 < Formula
   head do
     url "https://github.com/emacs-mirror/emacs.git", :branch => "emacs-29"
   end
-  
-  bottle do
-    root_url "https://github.com/sherylynn/homebrew-emacsx11/releases/download/pr-pull"
-    rebuild 1
-    sha256 x86_64_linux: "f631e7deae6321119adc14d6e2f72fd9f7d3fa8bc10b988905a132167d9c7bc9"
-  end
+
   
   depends_on "autoconf" => :build
   depends_on "gnu-sed" => :build
@@ -34,6 +29,11 @@ class Emacsx11 < Formula
   depends_on "cairo"
   depends_on "freetype" => :recommended
   depends_on "fontconfig" => :recommended
+
+  # for emacs package tree-sitter
+  depends_on "tree-sitter"
+  # for emacs package vterm
+  depends_on "libtool"
 
   depends_on "libgccjit"
   depends_on "gcc" => :build
@@ -76,6 +76,7 @@ class Emacsx11 < Formula
       --with-xml2
       --without-dbus
       --with-modules
+      --with-tree-sitter
       --without-ns
       --without-imagemagick
       --without-selinux
