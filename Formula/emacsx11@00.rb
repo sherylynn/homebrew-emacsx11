@@ -34,6 +34,9 @@ class Emacsx11AT29 < Formula
   depends_on "tree-sitter"
   # for emacs package vterm
   depends_on "libtool"
+  depends_on "libvterm"
+  # for emacs in kylin OS
+  depends_on "acl"
 
   depends_on "libgccjit"
   depends_on "gcc" => :build
