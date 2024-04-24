@@ -40,6 +40,7 @@ class Emacsx11 < Formula
   # for emacs package vterm
   depends_on "libtool"
   depends_on "libvterm"
+  depends_on "cmake"
   # for emacs in kylin OS
   depends_on "acl"
 
